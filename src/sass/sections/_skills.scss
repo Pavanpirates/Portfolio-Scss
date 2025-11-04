@@ -1,0 +1,122 @@
+/* ===========================
+   TECHNICAL SKILLS (FIGMA STYLE)
+   =========================== */
+
+.skills-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.skills-header {
+  margin-bottom: 3.5rem;
+  text-align: left;
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #272341;
+    margin-bottom: 0.6rem;
+  }
+
+  .underline {
+    width: 100px;
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #02aab0, #00cdac);
+  }
+}
+
+/* Each skill row */
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .skill-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 280px;
+
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: rgba(2, 170, 176, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 28px;
+        height: 28px;
+        color: #02aab0;
+        stroke-width: 2.2;
+      }
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #222;
+      margin: 0;
+    }
+  }
+
+  .divider {
+    width: 1px;
+    height: 40px;
+    background: #ddd;
+  }
+
+  .skill-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .badge {
+      display: inline-block;
+      padding: 0.75rem 1.6rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 2rem;
+      background: #f8f9fa;
+      border: 1px solid #dcdcdc;
+      color: #333;
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: rgba(2, 170, 176, 0.1);
+        border-color: #02aab0;
+        color: #02aab0;
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .skill-row {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .divider {
+      display: none;
+    }
+
+    .skill-left {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .skills-header h1 {
+    font-size: 2.3rem;
+  }
+}
