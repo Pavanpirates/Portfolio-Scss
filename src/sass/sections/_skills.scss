@@ -1,122 +1,120 @@
 /* ===========================
-   TECHNICAL SKILLS (FIGMA STYLE)
+   SKILLS & TECHNOLOGIES SECTION – FINAL POLISHED VERSION
    =========================== */
 
-.skills-container {
-  max-width: 1150px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
+.skills-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff; /* pure white */
+  padding: 7rem 2rem;
 
-.skills-header {
-  margin-bottom: 3.5rem;
-  text-align: left;
+  .skills-header {
+  text-align: center;
+  margin-bottom: 5rem;
 
   h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #272341;
-    margin-bottom: 0.6rem;
+    font-size: 3.2rem; 
+    font-weight: 800;
+    color: #272341;  /* make it bold & strong */
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
   }
 
-  .underline {
-    width: 100px;
-    height: 4px;
-    border-radius: 4px;
-    background: linear-gradient(135deg, #02aab0, #00cdac);
+  p {
+    font-size: 1.15rem;
+  color: #4a4a4a;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  margin-top: 0.8rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
 }
 
-/* Each skill row */
-.skill-row {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 1.8rem 0;
-  border-bottom: 1px solid #eee;
 
-  &:last-child {
-    border-bottom: none;
+  .skills-grid {
+    width: 100%;
+    max-width: 1150px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.8rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 
-  .skill-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    min-width: 280px;
+  .skill-box {
+    background: #ffffff;
+    border-radius: 1.2rem;
+    padding: 3.8rem 2.5rem; /* increased height */
+    text-align: left;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f0f0;
+    transition: all 0.35s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s ease forwards;
 
-    .icon-box {
-      width: 60px;
-      height: 60px;
-      border-radius: 14px;
-      background: rgba(2, 170, 176, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.25s; }
+    &:nth-child(3) { animation-delay: 0.4s; }
 
-      svg {
-        width: 28px;
-        height: 28px;
-        color: #02aab0;
-        stroke-width: 2.2;
-      }
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 35px rgba(2, 170, 176, 0.15);
     }
 
     h2 {
-      font-size: 1.3rem;
-      font-weight: 600;
+      font-size: 1.5rem;
+      font-weight: 700;
       color: #222;
-      margin: 0;
+      margin-bottom: 2rem;
+      padding-left: 0; /* removed dot spacing */
+      position: relative;
     }
-  }
 
-  .divider {
-    width: 1px;
-    height: 40px;
-    background: #ddd;
-  }
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
 
-  .skill-right {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+      .tag {
+        display: inline-block;
+        background: #f4f5f6; /* soft ash */
+        color: #333;
+        font-size: 1.05rem;
+        font-weight: 600;
+        border-radius: 2.5rem;
+        padding: 0.75rem 1.7rem;
+        border: 1px solid #e3e6e8;
+        transition: all 0.25s ease;
+        letter-spacing: 0.2px;
+        cursor: default;
 
-    .badge {
-      display: inline-block;
-      padding: 0.75rem 1.6rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 2rem;
-      background: #f8f9fa;
-      border: 1px solid #dcdcdc;
-      color: #333;
-      transition: all 0.25s ease;
-
-      &:hover {
-        background: rgba(2, 170, 176, 0.1);
-        border-color: #02aab0;
-        color: #02aab0;
+        &:hover {
+          background: linear-gradient(135deg, #02aab0 0%, #00cdac 100%);
+          color: #fff;
+          border-color: transparent;
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(2, 170, 176, 0.2);
+        }
       }
     }
   }
-}
 
-/* Responsive */
-@media (max-width: 900px) {
-  .skill-row {
-    flex-direction: column;
-    align-items: flex-start;
-
-    .divider {
-      display: none;
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
     }
-
-    .skill-left {
-      margin-bottom: 1rem;
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
-  }
-
-  .skills-header h1 {
-    font-size: 2.3rem;
   }
 }
